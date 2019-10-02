@@ -29,16 +29,18 @@ app.use(bodyParser.json())
 
 app.use(express.static('public'));
 
-app.use('/', router);
-app.use('/reg_numbers/', router);
-app.use('/reg_number/:reg_number/', router);
-app.use('/reg_numbers/delete/:reg_number/', router);
-
 //Define error-handling middleware functions
 app.use(function (err, req, res, next) {
     res.status(500);
     res.render('error', { error: err });
 })
+
+app.use('/', router);
+app.use('/reg_numbers/', router);
+app.use('/reg_number/:reg_number/', router);
+app.use('/reg_numbers/delete/:reg_number/', router);
+
+
 
 const PORT = process.env.PORT || 5000;
 
