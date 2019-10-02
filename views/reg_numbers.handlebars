@@ -1,0 +1,42 @@
+<div style="margin: 2em 0 0 0">
+  <button class="btn waves-effect waves-light left btn-flat"><a href="/" style="color: #000">Back</a>
+    <i class="material-icons left">keyboard_backspace</i>
+  </button>
+  <span style="color: white">.</span>
+</div>
+<div class="message infoMessage center animated fadeIn" style="margin: 5% 0 0 0;">
+  <h5> {{messages}}</h5>
+</div>
+
+<div class="card" style="margin: 4.5rem 0 1rem 0;">
+  <div class="card-content">
+    <div class="row">
+      <div>
+        <h4 class="center" style="margin-top: 1%;">List of Names Greeted</h4>
+        <table class="highlight" style="    border: solid 1px #DCDBDC;">
+          <thead>
+            <tr>
+              <th style="font-size: 1.4em;">Reg Number</th>
+              <th style="font-size: 1.4em;">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {{#each registrations}}
+            <tr>
+              <td class=""> <a href="/reg_number/{{reg_number}}">{{reg_number}}</a></td>
+              <td>
+                {{!-- <a href="/reg_numbers/edit/{{reg_number}}" class="waves-effect waves-light btn"><i
+                    class="material-icons left">edit</i>Edit</a> --}}
+                <a href="/reg_numbers/delete/{{reg_number}}" class="waves-effect #f44336 red btn"><i
+                    class="material-icons left">delete</i>Delete</a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
