@@ -27,7 +27,7 @@ router.get('/', async (req, res, next) => {
       messages: req.flash('info')
     });
   } catch(err) {
-    res.render(err);
+    next(err);
   }
 })
 
