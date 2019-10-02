@@ -37,7 +37,7 @@ app.use('/reg_numbers/delete/:reg_number/', router);
 //Define error-handling middleware functions
 app.use(function (err, req, res, next) {
     res.status(500);
-    res.render('error', { error: "err: testing the error" });
+    res.render('error', { error: err });
  })
  
 const PORT = process.env.PORT || 5000;
