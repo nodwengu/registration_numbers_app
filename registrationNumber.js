@@ -95,7 +95,8 @@ module.exports = function RegistrationNumber(pool) {
       setAllFromTown,
       getAllFromTown,
       validRegNumber,
-      deleteById
+      deleteById,
+    
 
    }
 }
