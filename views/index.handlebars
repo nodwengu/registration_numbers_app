@@ -16,7 +16,7 @@
             <form action="/reg_number" method="POST">
               <div class="input-field" style="display: flex; align-items: center;">
                 <span for="name" style="font-size: 16px;">Registration Number</span>
-                <input placeholder="Enter registration" id="name" type="text" class="validate right" name="registration"
+                <input placeholder="Enter number that starts with: {{#each towns}}{{town_code}}, {{/each}}" id="name" type="text" class="validate right" name="registration"
                   style="border: solid 1px #4EC8BA;" maxlength = "9">
               </div>
               <div class="right">
