@@ -84,6 +84,15 @@ module.exports = function RegistrationNumber(pool) {
       return pool.query('DELETE FROM registrations WHERE reg_number = $1', [regNumber]);
    }
 
+   function formatNumber(inputVal) {
+      //let elem = inputVal.split('-').join('');    // Remove dash (-) if mistakenly entered.
+      // elem = elem.replace(/\s/g,'');   //Remove white space between characters
+      //elem = [elem.slice(0, 2), elem.slice(2)].join(' ');
+      //let finalVal = elem.match(/.{1,6}/g).join('-');
+       
+      //return finalVal;
+   }
+
    return {
       setRegistration,
       getAllRegistrations,
@@ -96,7 +105,7 @@ module.exports = function RegistrationNumber(pool) {
       getAllFromTown,
       validRegNumber,
       deleteById,
-    
+      formatNumber
 
    }
 }

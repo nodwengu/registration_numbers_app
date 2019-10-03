@@ -35,14 +35,18 @@ router.get('/', async (req, res, next) => {
 router.post('/reg_number/', async (req, res, next) => {
   try {
     let reg_number = (req.body.registration).toUpperCase().trim();
+    reg_number = reg_number.split('-').join('').replace(/\s/g,''); 
+    reg_number = [reg_number.slice(0, 2), reg_number.slice(2)].join(' ');
+
     let isRepeated = await registrationNumber.regIsRepeated(reg_number);
     let validNumber = await registrationNumber.validRegNumber(reg_number);
     let letterNumber = /^[0-9a-zA-Z ]+$/;
-
+    
     if ( validNumber === false || (!reg_number.match(letterNumber)) ) {
       req.flash('info', 'Please add a valid registration number / Number should not be empty'); 
     } else {
       if (!isRepeated) {
+        reg_number = reg_number.match(/.{1,6}/g).join('-');
         let registration = {
           reg_number: reg_number, 
           town_id: await registrationNumber.getTownId(reg_number)
