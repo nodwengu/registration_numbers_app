@@ -13,7 +13,7 @@
     "urldecode": "^1.0.1"
   },
   "devDependencies": {
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.3"
   },
   "scripts": {
     "test": "mocha",
